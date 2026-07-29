@@ -13,7 +13,7 @@ This project aims to develop a web-based applicant information and employment as
 | Arman Ariel G. Alviar |
 | Althea Nicole F. Gammad |
 | Ivan Pierre A. La Torre |
-| Hermogenez Terminez Jr. |
+| Hermogenez R. Terminez Jr. |
 
 
 
