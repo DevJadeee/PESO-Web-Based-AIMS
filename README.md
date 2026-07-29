@@ -12,7 +12,7 @@ This project aims to develop a web-based applicant information and employment as
 | Jade Patrick Ramos |
 | Arman Ariel Alviar |
 | Althea Nicole Gammad |
-| Ivan Pierre La Torre |
+| Ivan Pierre A. La Torre |
 | Hermogenez Terminez Jr. |
 
 
