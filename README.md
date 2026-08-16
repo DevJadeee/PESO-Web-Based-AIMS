@@ -80,6 +80,20 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 
 > > > > > > > 1cd40a5 (Add Laravel PESO Web-Based AIMS)
 
+## Project Documentation
+
+The software engineering project findings are documented in the following files:
+
+- [Software Engineering Project Findings (PDF)](documentation/PESO_Software_Engineering_Project_Findings.pdf)
+- [Software Engineering Project Findings (Word)](documentation/PESO_Software_Engineering_Project_Findings.docx)
+
+The documentation identifies the portions of the system that implement:
+1. Professional Coding Standards and Practices
+2. 15 Principles of Quality Software
+3. Defensive Programming
+4. Error and Exception Handling
+
+It also identifies portions of the project that do not fully implement the identified principles and provides recommendations for improvement.
 
 # How to Run the Project
 
@@ -103,3 +117,5 @@ Open Command Prompt or Terminal and run:
 
 ```bash
 git clone https://github.com/DevJadeee/PESO-Web-Based-AIMS.git
+
+
