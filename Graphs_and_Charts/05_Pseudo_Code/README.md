@@ -6,7 +6,7 @@ Handles data submission and profile generation when a job seeker accesses the sy
 
 **Input:** Prompts for ApplicantData.
 
-## Function Calls:
+### Function Calls:
 
 ​**SubmitApplication(ApplicantData)** initializes the submission.
 
@@ -28,7 +28,7 @@ Executes administrative controls after authenticating system managers.
 
 **Authentication:** Executes LOGIN PESO Admin.
 
-## Function Calls:
+### Function Calls:
 
 **ManageApplicantInformation() / ReviewApplicantInformation()** opens profile management tools.
 
@@ -52,7 +52,7 @@ Provides a lightweight query route for applicants checking their application sta
 
 **Input:** Prompts for an ApplicantID.
 
-## Function Calls:
+### Function Calls:
 
 **RetrieveApplicantRecord(ApplicantID)** queries and assigns data to ApplicantRecord.
 
