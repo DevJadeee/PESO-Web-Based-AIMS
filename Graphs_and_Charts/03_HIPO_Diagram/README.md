@@ -45,9 +45,9 @@ Generated Reports: Displays compiled reports on verified applications.
 Manages status tracking and record lookups.
 
 **3.1 Applicant ID or Reference Number:** Inputs unique identifiers for tracking.
-‎
+
 **​3.2 Retrieve Applicant Record:** Pulls up record details.
-‎
-​Check Status: Verifies the current state of an application.
-‎​
+
+Check Status: Verifies the current state of an application.
+
 **3.3 Application Status:** Displays the final status updates to the user.
