@@ -79,3 +79,27 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
 
 > > > > > > > 1cd40a5 (Add Laravel PESO Web-Based AIMS)
+
+
+# How to Run the Project
+
+## Prerequisites
+
+Before running the system, install the following:
+
+- PHP 8.2 or higher
+- Composer
+- Node.js and npm
+- Git
+- A web browser
+
+The project uses Laravel 12 and SQLite for the default local database configuration.
+
+## Installation
+
+### 1. Clone the Repository
+
+Open Command Prompt or Terminal and run:
+
+```bash
+git clone https://github.com/DevJadeee/PESO-Web-Based-AIMS.git
