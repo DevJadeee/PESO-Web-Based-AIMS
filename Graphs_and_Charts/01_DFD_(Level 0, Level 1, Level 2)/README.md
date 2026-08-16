@@ -41,8 +41,11 @@ Shows the main functional modules of the system and how they interact with the t
 This diagram further decomposes the Level-1 processes into more detailed sub-processes:
 
 **1.0 Applicant Profiling** remains as a single process.
+
 **2.0 Application Verification Process** is expanded to include 2.1 Match Applicants with Job Vacancies.
+
 **3.0 Reports Processing** is expanded to include 3.1 MS Office Applications (conversion of reports into MS Office format).
+
 **4.0 Application Status Process** remains as a single process.
 
 The same three data stores (D1 Applicants Database, D2 Reports Database, D3 Documents Database) and the same external entities are retained.
