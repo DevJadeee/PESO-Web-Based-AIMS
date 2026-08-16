@@ -1,9 +1,9 @@
 These Data Flow Diagrams (DFDs) break down the high-level and detailed interactions within the Web-Based Applicant Information & Employment Assistance Management System.
 ‎
-‎​Level 0: 
+‎​##Level 0: 
 ‎This diagram presents an overarching, top-level view of the entire system as a single central process (0) interacting with external entities.
 ‎
-‎​Entities:
+‎​###Entities:
 ‎​Applicant: Submits the Application Form into the system and receives an Application Update.
 ‎
 ‎​PESO Admin: Manages system data by sending inputs (Manage Applicant Info, Verify Documents, and Update Application Status) and retrieves outputs (Generated Reports and View Application Details).
