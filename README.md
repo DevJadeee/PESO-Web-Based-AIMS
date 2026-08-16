@@ -85,7 +85,6 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 The software engineering project findings are documented in the following files:
 
 - [Software Engineering Project Findings (PDF)](documentation/PESO_Software_Engineering_Project_Findings.pdf)
-- [Software Engineering Project Findings (Word)](documentation/PESO_Software_Engineering_Project_Findings.docx)
 
 The documentation identifies the portions of the system that implement:
 1. Professional Coding Standards and Practices
