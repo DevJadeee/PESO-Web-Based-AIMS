@@ -6,7 +6,7 @@ Defines how standard users apply and build their system profile.
 
 **Input:** Receives an Application Form, Personal Information, Resume, and Supporting Documents.
 
-**Process:**
+### Process:
 
 Submits the application.
 
@@ -28,7 +28,7 @@ Defines the management, verification, and reporting tasks carried out by adminis
 
 **Input:** Receives Applicant Information, Submitted Documents, Verification Requests, and requests for Application Status Reports.
 
-**Process:**
+### Process:
 
 Reviews applicant information.
 
@@ -54,7 +54,7 @@ Handles status queries from applicants checking their submission progress.
 
 **Input:** Requires the Applicant ID or Reference Number.
 
-**Process:**
+### Process:
 
 Retrieves the corresponding applicant record from the database.
 
