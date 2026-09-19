@@ -40,9 +40,14 @@ PESO-Web-Based-AIMS/
 │
 ├── Documentation/
 │   └── PESO_Web_Based_AIMS (Software Quality Findings).pdf
-│
-├── Graphs_and_Charts/
-│   └── [Project graphs and charts]
+│   └──Graphs_and_Charts/
+|        └──01_DFD_(Level1, Level2, Level3)
+|        └──02_Structured_Chart
+|        └──03_HIPO_Diagram
+|        └──04_Structured_Englis
+│        └──05_Pseudo_Code
+|        └──06_ERD
+|        └──07_Data_Dictionary
 │
 ├── Source_Code/
 │   └── [System source code]
