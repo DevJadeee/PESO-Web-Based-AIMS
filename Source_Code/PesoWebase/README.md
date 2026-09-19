@@ -32,7 +32,7 @@ npm run dev:full
 Then open this URL in the browser:
 
 ```txt
-http://localhost:5173
+http://localhost:5174
 ```
 
 The backend server runs on:
