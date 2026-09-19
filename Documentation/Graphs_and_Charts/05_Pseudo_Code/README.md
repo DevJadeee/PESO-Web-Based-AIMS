@@ -1,69 +1,53 @@
 
 
-This **Pseudocode** details the underlying programmatic logic and function calls for the PESO Applicant Information and Employment Assistance Management System. It evaluates the user's role or request (UserType) via conditional branching (IF ... ELSE IF ... ELSE) and executes the corresponding operations.
+This **Pseudocode** details the underlying programmatic logic and function calls for the two core algorithmic components of the system: **Semantic Job Matching** and **Relevance Ranking**. Together, these algorithms take an applicant's resume and the available job vacancies as input and produce a ranked list of the most relevant job matches as output.
 
-## 1. Applicant Execution Path (UserType = "Applicant")
+## 1. Semantic Job Matching Algorithm
 
-Handles data submission and profile generation when a job seeker accesses the system.
+Determines which job vacancies are semantically relevant to a given applicant by comparing their resume against each job posting.
 
-**Input:** Prompts for ApplicantData.
-
-### Function Calls:
-
-​**SubmitApplication(ApplicantData)** initializes the submission.
-
-**CreateApplicantProfile(ApplicantData)** generates and returns an ApplicantProfile.
-
-**StoreApplicantInformation(ApplicantProfile)** writes the profile to the database.
-
-**MatchApplicantWithJobVacancies(ApplicantProfile)** runs automated job-matching logic.
-
-**SubmitDocumentsForVerification(ApplicantProfile)** routes uploaded documents for review.
-
-​**Output:** Displays "Application Submitted Successfully".
-
----
-
-## 2. PESO Admin Execution Path (UserType = "PESO Admin")
-
-Executes administrative controls after authenticating system managers.
-
-**Authentication:** Executes LOGIN PESO Admin.
+**Input:** Prompts for 'Resume' and 'JobDetails'.
 
 ### Function Calls:
 
-**ManageApplicantInformation() / ReviewApplicantInformation()** opens profile management tools.
+​**ExtractResumeData(Resume)** parses the applicants resume and returns structured 'ResumeData'.
 
-​**VerifyDocuments()** checks submitted files for validity.
+**CreateApplicantProfiles(ResumeData, JobDetails)** builds the corresponding 'ApplicantProfile' and 'JobProfile' used for comparison.
 
-**MatchApplicantsWithJobVacancies()** initiates system-wide job matching.
+**TextPreprocessing(ApplicantProfile, JobProfile)** cleans and normalizes the profile text (e.g., tokenization, stop-word removal) and returns 'PreprocessedText'.
 
-**GenerateReports() and ConvertReportsToMSOffice()** compile and export administrative reporting files.
+**GenerateTF-IDFRepresentation(PreprocessedText)** converts the preprocessed text into a 'TF-IDFRepresentation'.
 
-​**UpdateApplicationStatus()** updates evaluation states.
+**ApplyDomainSpecificWeighting(TF-IDFRepresentation)** adjust terms weights based on domain-specific relevance, producing a 'WeightedRepresentation'.
 
-**StoreDocumentsAndReports()** saves processed changes and reports to storage.
+**CalculateCosineSimilarity(WeightedRepresentation, Job)** computes a 'Similarity' score between the applicants profile and each job, repeated for every job vacancyn ('REPEAT ... UNTIL MoreJobs = FALSE').
 
-**Outputs:** Displays/presents "Verified Applications", "Generated Reports", "Updated Application Status", and "Approved/Rejected Applications".
+Within this loop, each job is evaluated against a 'Threshold':
+- If 'Similarity ≥ Threshold', the job is classified as **Matched/Relevant** and added to the 'MatchedJobSet'.
+- Otherwise, the job is excluded from the matched set.
+
+​**Output:** Returns the 'MatchedJobSet', the collection of job vacancies classified as relevant to the applicant.
 
 ---
 
-## 3. Status Check Execution Path (UserType = "Check Application Status")
+## 2. Relevance Ranking Algorithm
 
-Provides a lightweight query route for applicants checking their application status.
+Takes the jobs identified by the Semantic Job Matching algorithm and orders them by how closely each one matches the applicant.
 
-**Input:** Prompts for an ApplicantID.
+**Input:** Prompts for 'MatchedJobSet'.
 
 ### Function Calls:
 
-**RetrieveApplicantRecord(ApplicantID)** queries and assigns data to ApplicantRecord.
+**RetrievalSimilarityValue(MatchedJobSet)** retrieves the similarity values previously calculated for each matched job.
 
-**​CheckApplicationStatus(ApplicantRecord)** evaluates the profile and assigns the result to Status.
-‎
-‎​**Output** Displays the current Status.
+​**CalculateRelevanceScore(SimilarityValues, Job)** computes a 'RelevanceScore' for each job, repeated for every job in the matched set ('REPEAT ... UNTIL MoreJobs = FALSE').
 
----
+Within this loop, for each job:
+- **ConvertToPercentage(RelevanceScore)** converts the score into a 'MatchPercentage'.
+- **StoreRelevanceScore(Job, MatchPercentage)** saves the jobs relevance score for later display.
 
-## ​4. Exception Handling (ELSE)
-‎
-‎​**Output:** Displays "Invalid User Type" if the input does not match any defined role or action.
+**SortHighestToLowest(MatchedJobSet)** arranges 'RankedJobs' in descending order of relevance.
+
+**AssignRank(RankedJobs)** assign a numerical rank to each job based on its position in the sorted list.
+
+**Output:** **DisplayRankedJobs(RankedJobs) WITH MatchedPercentage** presents the final ranked list of matched jobs, each shown alongside its computed match percentage.
