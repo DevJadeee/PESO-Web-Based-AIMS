@@ -15,18 +15,17 @@ Extracts data from the applicant's resume.
 
 ​Performs text preprocessing on both profiles (cleaning and normalizing the text).
 
-​Generates TF-IDF representation of the preprocessed text.
+​Generates TF-IDF representations of the preprocessed text.
 
 Applies domain-specific weighting to the TF-IDF representations.
 
 Repeats the following for each job in the list of vacancies:
 - Calculates the cosine similarity between the applicant's representation and the job's reresentation.
-- If the similarity meets or exceeds the threshold, classifies the job as Matched/Relevant. Otherwise, Exclude the job from the matched set
+- If the similarity meets or exceeds the threshold, classifies the job as Matched/Relevant; otherwise, excludes the job from the matched set
 
 This repeats until no jobs remain unevaluated.
 
-**Output:** Produces the Matched Job Set
-- the list of job vacancies classifies as relevant to the applicant.
+**Output:** Produces the Matched Job Set, the list of job vacancies classified as relevant to the applicant.
 
 ---
 
