@@ -5,7 +5,7 @@ This **Structured English** document outlines the procedural, logic-based flow f
 
 Defines how the system determines which job vacancies are relevant to a given applicant.
 
-**Input:** Receives an Applicant's Resume and the Job Details of each posted vacancy.
+**Input:** Receives an applicant's Resume and the Job Details of each posted vacancy.
 
 ### Process:
 
