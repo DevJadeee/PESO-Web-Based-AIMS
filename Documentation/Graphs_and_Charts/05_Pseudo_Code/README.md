@@ -44,11 +44,11 @@ Takes the jobs identified by the Semantic Job Matching algorithm and orders them
 
 Within this loop, for each job:
 - **ConvertToPercentage(RelevanceScore)** converts the score into a 'MatchPercentage'.
-- **StoreRelevanceScore(Job, MatchPercentage)** saves the jobs relevance score for later display.
+- **StoreRelevanceScore(Job, MatchPercentage)** saves the job's relevance score for later display.
 
 **SortHighestToLowest(MatchedJobSet)** arranges 'RankedJobs' in descending order of relevance.
 
-**AssignRank(RankedJobs)** assign a numerical rank to each job based on its position in the sorted list.
+**AssignRank(RankedJobs)** assigns a numerical rank to each job based on its position in the sorted list.
 
-**Output:** **DisplayRankedJobs(RankedJobs) WITH MatchedPercentage** presents the final ranked list of matched jobs, each shown alongside its computed match percentage.
+**Output:** **DisplayRankedJobs(RankedJobs) WITH MatchPercentage** presents the final ranked list of matched jobs, each shown alongside its computed match percentage.
 
