@@ -2,7 +2,7 @@
 
 ## ObraKonek: a Web-Based Employment Facilitation System
 
-A web-based Employment Facilitation System developed for the Public Employment Service Office (PESO) of Agoo, La Union. The system is designed to support the management of applicant information, employment assistance, job opportunities, and related records through a centralized web-based platform.
+A Web-Based Employment Facilitation System developed for the Public Employment Service Office (PESO) of Agoo, La Union. The system is designed to support the management of applicant information, employment assistance, job opportunities, and related records through a centralized web-based platform.
 
 ## Project Members
 
