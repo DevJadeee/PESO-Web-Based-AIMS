@@ -1,0 +1,94 @@
+.report-filter-card {
+  margin-bottom: 24px;
+}
+.report-filter-card .panel-header h3 {
+  gap: 9px;
+}
+.report-header-actions {
+  display: flex;
+  gap: 8px;
+}
+.report-header-actions a {
+  text-decoration: none;
+}
+.report-icon {
+  color: var(--blue);
+  font-size: 20px;
+}
+.report-filter-form {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  padding: 20px;
+}
+.report-field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.report-field label {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+}
+.report-field input,
+.report-field select {
+  min-height: 42px;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  background: #fff;
+  color: var(--text);
+}
+.report-filter-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 0 20px 20px;
+}
+.report-metrics {
+  margin-bottom: 24px;
+}
+.report-metrics .stat-icon {
+  color: var(--blue);
+}
+.report-metrics .stat-gip .stat-icon {
+  color: var(--blue);
+}
+.report-metrics .stat-job .stat-icon {
+  color: var(--red);
+}
+.report-metrics .stat-spes .stat-icon {
+  color: var(--green);
+}
+.report-details .panel-header {
+  gap: 16px;
+}
+.report-period {
+  color: var(--muted);
+  font-size: 12px;
+}
+.empty-report {
+  padding: 30px;
+  color: var(--muted);
+  text-align: center;
+}
+@media (max-width: 800px) {
+  .report-filter-form {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 520px) {
+  .report-filter-form {
+    grid-template-columns: 1fr;
+  }
+  .report-filter-card .panel-header {
+    flex-direction: column;
+  }
+  .report-header-actions {
+    width: 100%;
+  }
+  .report-period {
+    display: block;
+  }
+}

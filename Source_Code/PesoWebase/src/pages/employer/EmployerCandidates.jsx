@@ -1,0 +1,5 @@
+const candidates = [['Maria Theresa Santos', 'Warehouse Assistant', '94%', 'Interview'], ['John Michael Dela Cruz', 'Warehouse Assistant', '87%', 'For review'], ['Angela Mae Flores', 'Junior Bookkeeper', '81%', 'New']]
+
+export default function EmployerCandidates() {
+  return <section className="employer-page-section"><div className="employer-page-heading"><div><span className="employer-eyebrow">Applicant review</span><h2>Candidate matching</h2><p>Review semantic match scores and keep applicants informed.</p></div></div><div className="employer-panel candidate-panel"><div className="candidate-table-head"><span>Candidate</span><span>Vacancy</span><span>Semantic match</span><span>Next action</span></div>{candidates.map(([name, job, score, action]) => <div className="candidate-row" key={`${name}-${job}`}><div><strong>{name}</strong><small>Applicant profile · La Union</small></div><span>{job}</span><strong className="match-score">{score}</strong><button className="employer-outline-button">{action}</button></div>)}</div></section>
+}
