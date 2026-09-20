@@ -10,7 +10,7 @@ Determines which job vacancies are semantically relevant to a given applicant by
 
 ### Function Calls:
 
-​**ExtractResumeData(Resume)** parses the applicants resume and returns structured 'ResumeData'.
+​**ExtractResumeData(Resume)** parses the applicant's resume and returns structured 'ResumeData'.
 
 **CreateApplicantProfiles(ResumeData, JobDetails)** builds the corresponding 'ApplicantProfile' and 'JobProfile' used for comparison.
 
@@ -18,9 +18,9 @@ Determines which job vacancies are semantically relevant to a given applicant by
 
 **GenerateTF-IDFRepresentation(PreprocessedText)** converts the preprocessed text into a 'TF-IDFRepresentation'.
 
-**ApplyDomainSpecificWeighting(TF-IDFRepresentation)** adjust terms weights based on domain-specific relevance, producing a 'WeightedRepresentation'.
+**ApplyDomainSpecificWeighting(TF-IDFRepresentation)** adjust term weights based on domain-specific relevance, producing a 'WeightedRepresentation'.
 
-**CalculateCosineSimilarity(WeightedRepresentation, Job)** computes a 'Similarity' score between the applicants profile and each job, repeated for every job vacancyn ('REPEAT ... UNTIL MoreJobs = FALSE').
+**CalculateCosineSimilarity(WeightedRepresentation, Job)** computes a 'Similarity' score between the applicant's profile and each job repeated for every job vacancy ('REPEAT ... UNTIL MoreJobs = FALSE').
 
 Within this loop, each job is evaluated against a 'Threshold':
 - If 'Similarity ≥ Threshold', the job is classified as **Matched/Relevant** and added to the 'MatchedJobSet'.
