@@ -50,5 +50,5 @@ Sorts the matched jobs from highest to lowest relevance score.
 
 Assigns a rank to each job based on its sorted position.
 
-**Output:** Produces a Ranked List of Jobs, each displayed its Match Percentage.
+**Output:** Produces a Ranked List of Jobs, each displayed with its Match Percentage.
 
