@@ -51,3 +51,4 @@ Within this loop, for each job:
 **AssignRank(RankedJobs)** assign a numerical rank to each job based on its position in the sorted list.
 
 **Output:** **DisplayRankedJobs(RankedJobs) WITH MatchedPercentage** presents the final ranked list of matched jobs, each shown alongside its computed match percentage.
+
