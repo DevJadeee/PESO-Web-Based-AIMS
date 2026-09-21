@@ -1,67 +1,54 @@
 
-This **Structured English** document outlines the procedural, logic-based flow for the PESO Applicant Information and Employment Assistance Management System. It uses conditional control logic (IF ... ELSE IF ... ENDIF) to define input, processing, and output steps based on the role or action of the user.
+This **Structured English** document outlines the procedural, logic-based flow for the two core components of the system: the **Semantic Job Matching Procedure** and the **Relevance Ranking Procedure**. Together, these procedures define how an applicant's resume is compared against available job vacancies and how the resulting matches are scored and ordered for presentation.
 
-## 1. Applicant Workflow (IF USER TYPE = "APPLICANT")
+## 1. Semantic Job Matching Procedure
 
-Defines how standard users apply and build their system profile.
+Defines how the system determines which job vacancies are relevant to a given applicant.
 
-**Input:** Receives an Application Form, Personal Information, Resume, and Supporting Documents.
+**Input:** Receives an applicant's Resume and the Job Details of each posted vacancy.
 
 ### Process:
 
-Submits the application.
+Extracts data from the applicant's resume.
 
-​Creates an applicant profile.
+​Creates an applicant profile and a corresponding job profile for comparison.
 
-​Stores the provided information in the system database.
+​Performs text preprocessing on both profiles (cleaning and normalizing the text).
 
-​Matches the applicant against available job vacancies.
+​Generates TF-IDF representations of the preprocessed text.
 
-Forwards uploaded documents for verification.
+Applies domain-specific weighting to the TF-IDF representations.
 
-**Output:** Generates an Applicant Profile, provides Application Details, and sends an Application Submitted Confirmation to the user.
+Repeats the following for each job in the list of vacancies:
+- Calculates the cosine similarity between the applicant's representation and the job's reresentation.
+- If the similarity meets or exceeds the threshold, classifies the job as Matched/Relevant; otherwise, excludes the job from the matched set
+
+This repeats until no jobs remain unevaluated.
+
+**Output:** Produces the Matched Job Set, the list of job vacancies classified as relevant to the applicant.
 
 ---
 
-## ​2. Administrator Workflow (ELSE IF USER TYPE = "PESO ADMIN")
+## ​2. Relevance Ranking Procedure
 
-Defines the management, verification, and reporting tasks carried out by administrative staff.
+Defines how the matched jobs are scored and arranged in order of relevance before being shown to the applicant.
 
-**Input:** Receives Applicant Information, Submitted Documents, Verification Requests, and requests for Application Status Reports.
-
-### Process:
-
-Reviews applicant information.
-
-​Verifies submitted documents.
-
-Matches applicants with job vacancies.
-
-Generates system reports.
-
-​Converts reports into MS Office formats (e.g., Word/Excel).
-
-Updates overall application statuses.
-
-Stores processed documents and reports.
-
-**Output:** Produces Verified Applications, Generated Reports, Updated Application Status, and final Approved/Rejected Applications decisions.
-
----
-
-## 3. Status Tracking Workflow (ELSE IF USER ACTION = "CHECK APPLICATION STATUS")
-
-Handles status queries from applicants checking their submission progress.
-
-**Input:** Requires the Applicant ID or Reference Number.
+**Input:** Receives the Matched Job Set produced by the Semantic Job Matching Procedure.
 
 ### Process:
 
-Retrieves the corresponding applicant record from the database.
+Retrieves the similarity values already calculated for each matched job.
 
-Checks the current status of the application.
+Repeats the following for each job in the matched set:
+- Calculates a relevance score.
+- Converts the relevance score into a percentage.
+- Stores the relevance score for the job.​
 
-Prepares the status details for display.
+This repeats until no jobs remain unevaluated.
 
-**Output:** Returns an Application Status Notification alongside complete Status Details.
+Sorts the matched jobs from highest to lowest relevance score.
+
+Assigns a rank to each job based on its sorted position.
+
+**Output:** Produces a Ranked List of Jobs, each displayed with its Match Percentage.
 
